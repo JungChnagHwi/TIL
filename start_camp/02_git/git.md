@@ -62,11 +62,13 @@ $ git commit --amend
 ```bash
 #vim을 활용해서 설정 제거하기
 #vim git 설정 파일 열기
-$ vim~/.gitconflg
-$ code~/.gitconflg
+$ vim~/.gitconfig
+$ code~/.gitconfig
 #insert 키:수정 상태 만들기
 #-insert-인 상태에서 모든 내용 삭제
 #esc: 수정 상태 종료
 #:wq
 ```
+
+
 
