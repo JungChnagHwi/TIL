@@ -42,7 +42,7 @@ git config --global user.name "정창휘"
 ```bash
 $ git config --global user.email "jch9937@gmail.com"
 $ git config --global user.name "정창휘"
-$ git config --global --list
+$ git config --global --list  #한 번만
 ```
 
 ### 커밋 기록 확인하기
@@ -85,4 +85,4 @@ $ git push origin master
 $ git clone github url  
 ```
 
-
+수정했엉!
