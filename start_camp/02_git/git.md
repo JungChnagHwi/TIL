@@ -7,7 +7,7 @@ gitlab , github 원격저장
 ### git 영역 
 1. working directory : 실제 작업 환경  
 ex) 홈펭지를 만들 때,, 로그인 기능을 만들려는데 회원가입 기능이 필요해,, 두 개 파일을 동시에 작없했는데 회원가입 기능을 먼저 완성해야 하니 ver1으로,, 로그인은 ver2로..,,,워킹 디렉토리에서 동시에 작업했더라도 ver1만 staging area로 먼저 옮기는 식
-2. staging area : 워킹디렉토리에서 변경된 파일 중 다음 버전에 포함시킬 파일들을 선택적으로 추가하거나 제외할 수 있는 중간 준비 영역
+2. staging area : 워킹디렉토리에서 변경된 파일 중 다음 버전에 포함시킬 파일들을 선택적으로 추가하거나 제외할 수 있는 중간 준비 영역 add
 3. Repository : 버전 이력과 파일들이 영구적으로 저장되는 여역,, 모든 버전과 변경 이력이 기록됨
 - (local 내가 하고 있는 .git) & (remove 분산 시스템에서 회사와 집을 연결하는 원격 저장소)
 
@@ -72,3 +72,22 @@ $ code~/.gitconfig
 
 
 
+## !!git push origin master
+
+git clone 주소창
+
+
+## 원격 저장소 git에 등록
+```bash
+$ git remote add{remote_nickname}{remote_url}
+```
+ 
+## 원격 저장소에 업로드
+```bash
+$ git push origin master
+```
+## 원격 저장소에 있는 내용 복제
+-최초로 내려받을 때
+```bash
+$ git clone github url  
+```
