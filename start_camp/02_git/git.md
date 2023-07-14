@@ -42,7 +42,7 @@ git config --global user.name "정창휘"
 ```bash
 $ git config --global user.email "jch9937@gmail.com"
 $ git config --global user.name "정창휘"
-$ git config --global --list
+$ git config --global --list  #한 번만
 ```
 
 ### 커밋 기록 확인하기
@@ -70,7 +70,22 @@ $ code~/.gitconfig
 #:wq
 ```
 
+## 원격 저장소 git에 등록
+```bash
+$ git remote add{remote_nickname}{remote_url}
+```
+ 
+## 원격 저장소에 업로드
+```bash
+$ git push origin master
+```
+## 원격 저장소에 있는 내용 복제
+-최초로 내려받을 때
+```bash
+$ git clone github url  
+```
 
+<<<<<<< HEAD
 
 ## !!git push origin master
 
@@ -91,3 +106,6 @@ $ git push origin master
 ```bash
 $ git clone github url  
 ```
+=======
+수정했엉!
+>>>>>>> 46460e3e2ea15c62b275a950f310f4d8c5c5f247
