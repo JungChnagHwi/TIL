@@ -108,4 +108,12 @@ $ git clone github url
 ```
 =======
 수정했엉!
+git remote -v
+-연동된 repo 확인
+git push -u origin master 
+-업스트림? git push
 
+## gitignore
+- git이 무시할 파일 설정,, 추적/공유 못하도록
+- db 나 가상환경에서 씀
+- 반드시 vs code로 만들기
