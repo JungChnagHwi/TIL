@@ -22,3 +22,4 @@
 - Ctrl + → / 단어 이동
 - Ctrl + Shift + → / 드래그
 - alt + 마우스 클릭 / 비동일 문자열 여러개 선택
+- Ctrl + ` / terminal
