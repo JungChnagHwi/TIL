@@ -32,7 +32,7 @@ $ git status
 $ git add {path}<folde_name>/{file_name}
 ```
 ### Repository에 저장
-```bash
+```bashcd
 $ git commit -m "commit message"
 ```
 git config --global user.email "jch9937@gmail.com"
