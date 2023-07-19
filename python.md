@@ -25,6 +25,10 @@
 - scope 공간&번위,,,내부는 local, 외부는 global,,만약 local에 값이 없으면 상위 값을 찾아간다.,, n=[1,2,3] 글로벌을 local에서 바꿀 수 있음 리스트라서 가능? 
 - local(1함수 안 함수의 변수) -> Enclosed(1의 함수) -> global -> built in(파이썬 그 자체.py) , local 부터 찾자, ppt예시 확인!!
 - iterable:반복가능한 객체
-- zip(*iterables) : 같은 인덱스를 튜플로 묶어서 출력
+- zip(*iterables) : 같은 인덱스를 튜플로 묶어서 출력(list달아), [(a,b), (a1,b1)]
 - lambda 이름 없은 함수, m=list(map(lambda x: x*2, m)) 이렇게 쓰면 좋아
--
+- 패킹 p=1, 2, 3 튜플로 묶어줌,, n[1,2,3,4,5], a,*b,c -> b=[2,3,4]
+- 언패킹 p=1,2,3,4,5/ a,b,c,d,e=p-> a=1,b=2,c=3....
+- 경로 다른 x.py에 만들어 놓은 함수를 import x 로 부르고 x.함수 들고와서 쓸 수 있어
+- 패키지(파일임), 패키지랑 모듈이랑 함수 불러와서 쓰기??
+
