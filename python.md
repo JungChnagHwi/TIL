@@ -37,4 +37,4 @@
 - if-else-for 가능, elif 안됨, if중첩 가능
 - 리스트를 생성하는 3가지 방법,, for loop, map, list comprehension
 - pass, 미완성 코드 지나가기
-- enumerate(iterable, start=0),, index 0부터 부여  
+- enumerate(iterable, start=0),, index 0부터 부여, 튜플로 저장
