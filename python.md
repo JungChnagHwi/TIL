@@ -32,4 +32,9 @@
 - 경로 다른 x.py에 만들어 놓은 함수를 import x 로 부르고 x.함수 들고와서 쓸 수 있어
 - 패키지(파일임), 패키지랑 모듈이랑 함수 불러와서 쓰기??
 - sorted(num, key=lambda x: x['가])
-
+- continue 다음 반복으로 되돌아가서 건너띄기
+- list comprehension > list(expression for 변수 in iterable if 조건식)
+- if-else-for 가능, elif 안됨, if중첩 가능
+- 리스트를 생성하는 3가지 방법,, for loop, map, list comprehension
+- pass, 미완성 코드 지나가기
+- enumerate(iterable, start=0),, index 0부터 부여  
