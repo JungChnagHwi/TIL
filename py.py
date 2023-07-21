@@ -4,24 +4,29 @@
 # response = requests.get(url).json()
 # print(response)
 
-def add_numbers(x,y):
-    return x+y
-print(add_numbers(3, 5))
+list_of_book = ['장화홍련전','가락국 신화','온달 설화','금오신화','이생규장전','만복자서포기','수성지','백호집','원생몽유록','홍길동전','장생전','도문대작','옥루몽','옥련몽']
 
-# 1. 절댓값을 반환하는 함수 abs를 사용하여 아래 변수에 담긴 값의 절댓값을 출력하시오.
-negative = -3
-print(abs(-1))
+rental_book = ['장생전','원생몽유록','이생규장전','장화홍련전','수성지','백호집','난중일기','홍길동전','만복자서포기']
 
-# 2. 아래 변수에 담긴 값의 boolean 값을 출력하시오.
-empty_list = []
-print(type(empty_list))
+for i in rental_book:
+    if i in list_of_book:
+       continue
+    print('모든 도서가 대여 가능한 상태입니다.')
+    if i not in list_of_book:
+        print(f'{i} 은/는 보유하고 있지 않습니다.')
 
 
-# 3. 주어진 리스트가 가진 모든 값을 더한 결과를 출력하시오.
-my_list = [1, 2, 3, 4, 5]
-print(sum(my_list))
 
-# 4. 주어진 정렬을 오름차순으로 정렬한 결과를 출력하시오.
-unsorted_list = ['하', '교', '캅', '의', '지', '가']
-unsorted_list.sort()
-print(unsorted_list)
+list_of_book = ['장화홍련전','가락국 신화','온달 설화','금오신화','이생규장전','만복자서포기','수성지','백호집','원생몽유록','홍길동전','장생전','도문대작','옥루몽','옥련몽']
+rental_book = ['장생전','위대한 개츠비', '원생몽유록','이생규장전', '데미안', '장화홍련전','수성지','백호집','난중일기','홍길동전','만복자서포기']
+
+missing_book = list(i for i in rental_book if i not in list_of_book)
+
+for i in rental_book:
+    if i not in list_of_book:
+        print(f'{i} 을/를 보충하여야 합니다.')
+if missing_book==[]:
+    print('모든 도서가 대여 가능한 상태입니다.')
+     
+
+
