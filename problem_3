@@ -1,0 +1,99 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMxwJNjBiUM1MHiNEDt+wDN",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/JungChnagHwi/TIL/blob/master/problem_3\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2xIolUAEWeMt",
+        "outputId": "9f001fac-953d-4a28-a35d-846b6e19fe87"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "                금융상품코드 저축금리유형 저축금리유형명 저축 기간  최고 우대금리\n",
+            "0              WR0001B      S      단리     6     3.67\n",
+            "1              WR0001B      S      단리    12     3.73\n",
+            "2              WR0001B      S      단리    24     3.36\n",
+            "3              WR0001B      S      단리    36     3.33\n",
+            "4             00320342      S      단리     6     3.70\n",
+            "..                 ...    ...     ...   ...      ...\n",
+            "108     10120116100011      S      단리    12     2.97\n",
+            "109  10-01-20-388-0002      S      단리     6     3.20\n",
+            "110  10-01-20-388-0002      S      단리    12     3.50\n",
+            "111  10-01-20-388-0002      S      단리    24     3.50\n",
+            "112  10-01-20-388-0002      S      단리    36     3.50\n",
+            "\n",
+            "[113 rows x 5 columns]\n"
+          ]
+        }
+      ],
+      "source": [
+        "import pandas as pd\n",
+        "import pprint\n",
+        "import requests\n",
+        "\n",
+        "def get_deposit_products():\n",
+        "\n",
+        "  api_key = \"46eb4f00b0c7979c0c1351f8bcf0592d\"\n",
+        "  url = f'http://finlife.fss.or.kr/finlifeapi/depositProductsSearch.json?auth={api_key}&topFinGrpNo=020000&pageNo=1'\n",
+        "  response = requests.get(url).json()\n",
+        "\n",
+        "  return response\n",
+        "\n",
+        "if __name__ == '__main__':\n",
+        "   result = get_deposit_products()\n",
+        "   for i in range(len(result['result']['optionList'])):\n",
+        "      del result['result']['optionList'][i]['dcls_month']\n",
+        "      del result['result']['optionList'][i]['fin_co_no']\n",
+        "      del result['result']['optionList'][i]['intr_rate2']\n",
+        "   df=pd.DataFrame(result['result']['optionList'])\n",
+        "   df.rename(columns={'fin_prdt_cd': '금융상품코드', 'intr_rate_type': '저축금리유형', 'intr_rate_type_nm': '저축금리유형명', 'save_trm': '저축 기간', 'intr_rate': '최고 우대금리'},inplace=True)\n",
+        "\n",
+        "   #json 파일로 바꾸면 깨져요ㅜㅜ\n",
+        "   #df = df.to_json(orient='records')\n",
+        "\n",
+        "   pprint.pprint(df)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "8yZoWtiOWfTG"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
