@@ -38,3 +38,13 @@
 - 리스트를 생성하는 3가지 방법,, for loop, map, list comprehension
 - pass, 미완성 코드 지나가기
 - enumerate(iterable, start=0),, index 0부터 부여, 튜플로 저장
+
+- error, 
+SyntaxError: 구문 에러는 코드의 문법적인 오류로 인해 발생하는 에러
+ZeroDivisionError: 0으로 나누기 시도할 때 발생합니다.
+TypeError: 잘못된 데이터 타입을 사용할 때 발생합니다.
+NameError: 정의되지 않은 변수를 사용할 때 발생합니다.
+ValueError: 유효한 값이 아닌 경우 발생합니다.
+IndexError: 유효하지 않은 인덱스를 사용할 때 발생합니다.
+KeyError: 딕셔너리에서 존재하지 않는 키를 사용할 때 발생합니다.
+FileNotFoundError: 파일을 찾을 수 없을 때 발생합니다.
