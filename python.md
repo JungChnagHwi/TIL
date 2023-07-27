@@ -79,3 +79,5 @@ FileNotFoundError: 파일을 찾을 수 없을 때 발생합니다.
 ## 데이터 구조
 - 메서드?? - 객체에 속한 함수, 위치가 class 내부에서 정의되는 함수, ex) 
 - print(n.sort()) #None
+
+

@@ -1,28 +1,23 @@
-# #1
-# # main.py
+#class
+class Pokemon:
+    number_of_pokemon = 0
+    discovered_species = []
 
-# # 아래 함수를 수정하시오.
-# def count_character(str1, str2):
-#     count=0
-#     for char in str1:
-#         if str2 == char:
-#             count+=1
-#     return count
+    def __init__(self):
+        self.skill_1 = '몸통박치기'
+
+    #모든 포켓몬은 공격이라는 행위(인스턴스)
+    def attack(self):
+        return self.skill_1
+
+    @classmethod
+    def increase_spcies(cls, spcies): 
+        #네 클래스 변수 discovered_species
+        #아직 추가 된 적이 없던 종이라면 추가
+        if spcies not in cls.discovered_species:
+            cls.discovered_species.append(spcies)
+
+    @classmethod
+    def increase_number(cls):
+        cls.number_of_pokemon +=1
     
-# result = count_character("Hello, World!", "o")
-# print(result) # 2
-
-#2
-# main.py
-
-# 아래 함수를 수정하시오.
-def find_min_max(list):
-    ans=(min(list), max(list))    
-    return ans
-
-result = find_min_max([3, 1, 7, 2, 5])
-print(result) # (1, 7)
-
-
-
-
