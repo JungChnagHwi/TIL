@@ -1,29 +1,26 @@
-#서버에 데이터 달라 요청하는 법
-# import requests
-# url = 'https://fakestoreapi.com/carts'
-# response = requests.get(url)
+import sys
+input=sys.stdin.readline
 
-# print(response.json())
+n = int(input())
+box=[]
+for i in range(n):
+  k = int(input())
+  box.append(k)
 
-#날씨 데이터 수집
-import json
-json_data = '''
-{
-    "name": "싸피",
-    "age": 53,
-    "hobby": [
-        "공부",
-        "축구"
-    ]
-}
-'''
-data = json.loads(json_data)
-#print(data)
+stack = []
+result = []
+num = 1
+for x in box:
+    while num <= x:
+        stack.append(num)
+        result.append('+')
+        num += 1
+    if stack[-1] == x:
+        stack.pop()
+        result.append('-')
+    else:
+        result = 'NO'
 
-#json에서 원하는 데이터만 가져오기
-name = data.get('name')
-#print(name)
-
-lnt = 37.56
-lon = 126.97
+result = '\n'.join(result)
+print(result)
 
