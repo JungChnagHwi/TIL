@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+    <meta charset="UTF-8">
+    <title> 연습용 페이지 </title>
+    <style media="screen">
+        th, td { border:1px solid; width: 50px; height: 50px}
+    </style>
+</head>
+<body>
+    <h1 id ="top">나는 연습용 페이지야!</h1>
+    <h2>두번째는 작은 제목이야</h2>
+    <p>
+        단락을 나눌거야 <br>
+        밑에는 내용을 적어봐
+    </p>
+
+    <p>
+        두번째 단락이야<br>
+        <b>이건 글자를 굵게 해줘</b><br>
+        <i>이건 이탤릭체야</i><br>
+        <u>이건 밑줄이야</u><br>
+        <s>이건 중간선이야</s>
+
+        <!--시멘틱 마크업 - 의미론적인 HTML, 적절한 요소 잘 사용
+            <b>굵은</b> vs <strong>중요한</strong>
+            <i>기울어진</i> vs <em>강조하는</em>
+            <u>밑줄친</u> vs <ins>새롭게 추가된</ins>
+            <s>중간선이 있는</s> vs <del>삭제된</del>-->
+        <br>
+        <a href = 'http://www.naver.com/'target="_blank">네이버</a>>
+        <!--target에 _self속성은 현재 화면에 표시한다는 의미고
+        _blank는 새로운 창에 외부 페이지가 나타난다는 의미 -->
+        <br>
+        <a href="#top">맨위로 가자</a>>
+        <!--이건 내부 링크야-->
+        <br>
+        <div>
+            <span> 이건 아무 의미없어 보이는 박스 같은거야 css할 때 쓸거야</span>
+        </div>
+        <br>
+        <ul>
+            <li>안녕</li>
+            <li>나는</li>
+            <li>그냥 리스트야</li>
+            <li>내 안엔 중첩도 가능해!</li>
+        </ul>
+        <br>
+        <ol>
+            <li>순서가 중요하다면</li>
+            <li>나를 써야 해</li>
+        </ol>
+        <br>
+        <dl>
+            <dt>난 정의를 나타내줘</dt>
+            <dd>난 위 단어의 정의,설명을 할거야</dd>
+            <dd>두 개 넣어도 된단다</dd>
+
+        <br>
+        <img src = "./pizza-jpg.jpg" alt = "피자" wight="400">
+        <!--상대경로 :  현재 웹 페이지를 기준으로 상대적으로 이미지의 위치를 나타내는 경로  ./
+            절대경로 :  실제 그 이미지가 위치한 곳의 전체 경로    c:/, http:// -->
+
+        <!--gif : 제한적인 색을 사용하고 용량이 적으며 투명 이미지와 애니메이션 이미지를 지원하는 형식
+            jpg : 사진이나 일반적인 그림에 쓰이며 높은 압축률과 자연스러운 색상 표현을 지원하는 형식(투명을 지원하지 않는다.)
+            png : 이미지 손실이 적으며 투명과 반투명을 모두 지원하는 형식-->
+    </p>
+    <p>
+        새로운 단락<br>
+        <!--테이블 생성-->
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+            </tr>
+        </table>
+        <br>
+        <table>
+            <caption>Monthly Savings</caption>
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>January</td>
+                    <td>$100</td>
+                </tr>
+                <tr>
+                    <td>February</td>
+                    <td>$80</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Sum</td>
+                    <td>$180</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <table>
+            <caption>Specification values</caption>
+            <thead>
+                <tr>
+                  <th rowspan="2">Grade.</th>
+                  <th rowspan="2">Point.</th>
+                  <th colspan="2">Strength.</th>
+                  <th rowspan="2">Percent.</th>
+                </tr>
+                <tr>
+                  <th>kg/mm</th>
+                  <th>lb/in</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>Hard</td>
+                  <td>0.45</td>
+                  <td>56.2</td>
+                  <td>80,000</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>Medium</td>
+                  <td>0.45</td>
+                  <td>49.2</td>
+                  <td>70,000</td>
+                  <td>25</td>
+                </tr>
+                <tr>
+                  <td>Soft</td>
+                  <td>0.45</td>
+                  <td>42.2</td>
+                  <td>60,000</td>
+                  <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+    </p>
+    <br>
+    <p>
+        <!--사용자 입력 - 폼요소-->
+        <fieldset>
+            <legend>기본정보</legend>
+            <label for="userid">아이디:</label> <input type="text" placeholder="영문으로만 써주세요" id="userid"><br>
+            <label for = "userpw">비밀번호:</label> <input type="password" id="userpw"><br>
+            성별: 남자 <input type="radio" name="gender" checked>, 여자 <input type="radio" name="gender"><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>부가정보</legend>
+            취미: 영화감상 <input type = "checkbox" name="hobby">, 독서 <input type = "checkbox" name="hobby">, 음악 <input type = "checkbox" name="hobby"><br>
+            프로필 사진 업로드: <input type="file"><br>
+        </fieldset>
+
+        <input type="submit" value="전송"><br>
+        <input type="reset" value="취소"><br>
+        <input type="button" value="등록"><br>
+        <input type="image" src="http://placehold.it/50x50?text=click" alt="click" width="50" height="50">
+    </p>
+
+    <p>
+        사는 지역: <select>
+            <option>서울</option>
+            <option selected>부산</option>
+            <option>제주</option>
+        </select><br>
+        자기소개: <textarea cols="30" rows="5" placeholder = "자기소개는 짧게 해주세요!"></textarea><br>
+
+        <button type="submit">전송</button><br>
+        <button type="reset">취소</button>
+
+        <br>
+    </p>
+
+    <form action="/result.html" method="get">
+        아이디: <input type="text" name="id"><br>
+        비번 : <input type="password" name="pw">
+        <button type="submit">전송</button>
+        <button type="reset">취소</button>
+    </form>
+    
+</body>
+</html>
+
+<!--콘텐츠 모델
+    Content Models 의 7 분류  
+* 		Metadata Content
+* 		Flow Content
+* 		Sectioning Content
+* 		Heading Content
+* 		Phrasing Content
+* 		Embedded Content
+* 		Interacitve Content
+
+1. Metadata 
+" base, link, meta, noscript, script, style, title " 
+Metadata에는 콘텐츠의 스타일, 동작을 설정하거나 다른 문서와의 관계 등 정보를 포함하는 요소들이 포함됩니다.
+메타 태그, 타이틀 태그, 스타일 태그, 링크 태그가 이에 해당하며 대부분 <head>내에 들어간다는 것이 특징입니다.
+ 
+2. Flow 
+" a, abbr, address,map>area, article, aside,audio, b, bdo, blockquote,br, button,
+canvas, cite, code, datalist, del, details, dfn, div, dl, em, embed, 
+fieldset, figure, footer, form, h1 ~ h6, header, hgroup, hr, i, iframe, img,
+ input, ins, kbd, keygen, label, map, mark, math, menu, meter, nav, noscript, object, ol, 
+output, p, pre, progress, q, ruby, samp, script, section, select, small, span, strong, 
+style[scoped], sub, sup, svg, table, textarea, time, ul, var, video, wbr " 
+Flow에는 문서의 자연스러운 흐름에 의해 배치되는 요소들이 포함됩니다.
+Metadata에 해당하는 일부 태그들만 Flow에서 제외되며 요소 대부분이 Flow에 포함됩니다.
+ 
+3. Sectioning 
+" article, aside, nav, section " 
+Sectioning에는 문서의 구조와 관련된 요소들이 포함됩니다.
+HTML5에서 새로 생긴 <article>, <aside>, <nav>, <section> 등이 포함되며 이 태그들은 문서의 구조, 아웃라인에 영향을 주게 됩니다.
+ 
+4. Heading 
+" h1, h2, h3, h4, h5, h6 " 
+Heading에는 각 section의 header를 정의하는 heading 태그가 포함됩니다.
+ 
+5. Phrasing 
+"a, abbr, map>area, audio, b, bdo, br, button, canvas, cite, code, datalist, del, dfn, em, embed,
+ i, iframe, img, input, ins, kbd, keygen, label, map, mark, math, meter, noscript, object, output,
+ progress, q, ruby, samp, script, select, small, span, strong, sub, sup, svg, textarea, time, 
+var, video, wbr"
+Phrasing에는 문서의 텍스트 또는 텍스트를 꾸며주는 문단 내부 레벨로 사용되는 요소들이 포함됩니다.
+ 
+6. Embedded 
+" audio, canvas, embed, iframe, img, math, object, svg, video " 
+Embedded에는 외부 콘텐츠를 표현하는 요소들이 포함되며 오디오나 비디오, 이미지 등 멀티미디어 관련 요소들이 이에 해당합니다.
+ 
+7. Interactive 
+" a, audio[controls], button, details, embed, iframe, img[usemap], input, keygen, label, menu, 
+object[usemap], select, textarea, video[controls] " 
+Interactive에는 사용자와 상호작용을 하는 요소들이 포함되며 대표적으로 form 요소들이 이에 해당합니다.
+-->
+
+
+<!--
+    블록 레벨 요소
+부모 요소의 가로 영역에 맞게 꽉 채워져 표현되는 요소입니다.
+양옆으로 다른 요소가 배치되지 않게 박스를 생성하므로 박스의 위아래로 줄 바꿈이 생기게 됩니다.
+블록 레벨 요소는 일반적인 모든 요소(블록, 인라인 레벨 등)를 포함할 수 있습니다. 
+" div, h1~h6, p, ul, li, table ..."
+
+ 
+인라인 레벨 요소
+하나의 라인 안에서 자신의 내용만큼의 박스를 만드는 요소입니다.
+라인의 흐름을 끊지 않고 요소 앞 뒤로도 줄 바꿈이 되지 않아 다른 인라인 요소들이 자리할 수 있습니다.
+인라인 레벨 요소는 블록 레벨 요소의 자식으로 분류되기 때문에 자손으로 블록 레벨 요소를 가질 수 없습니다.
+즉, 인라인 레벨 요소는 블록 레벨 요소를 포함할 수 없습니다. 
+" span, i, img, em, strong, a ..." 
+
+다만, HTML5 버전에서 생겨난 한가지 예외 경우가 있는데 <a>는 인라인 레벨 요소지만
+자손으로 블록 레벨 요소를 가질 수 있습니다.
+-->
+
+<!--"https://developer.mozilla.org/ko/docs/Web/HTML"-->
+<!--"https://www.w3schools.com/tags/ref_byfunc.asp"-->
