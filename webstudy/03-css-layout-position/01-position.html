@@ -13,7 +13,7 @@
     }
 
     .container {
-      /* position: relative; */
+      position: relative; 
       height: 300px;
       width: 300px;
       border: 1px solid black;
@@ -26,29 +26,29 @@
     }
 
     .static {
-      /* position: static; */
+      position: static; 
       background-color: lightcoral;
     }
 
-    .absolute {
-      /* position: absolute; */
+    .absolute {/*nomalflow에서 벗어나 부모요소 기준으로*/
+      position: absolute; 
       background-color: lightgreen;
-      /* top: 100px; */
-      /* left: 100px; */
+      top: 100px; 
+      left: 100px; 
     }
 
-    .relative {
-      /* position: relative; */
+    .relative {/*본인의 static 시절 기준*/
+      position: relative; 
       background-color: lightblue;
-      /* top: 100px; */
-      /* left: 100px; */
+      top: 100px; 
+      left: 100px; 
     }
 
-    .fixed {
-      /* position: fixed; */
+    .fixed {/*nomalflow에서 벗어나 화면 기준으로*/
+       position: fixed; 
       background-color: gray;
-      /* top: 0; */
-      /* right: 0; */
+      top: 0; 
+      right: 0; 
     }
   </style>
 </head>

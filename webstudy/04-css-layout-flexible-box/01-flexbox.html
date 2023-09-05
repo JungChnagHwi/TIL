@@ -7,10 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .container {
+    .container {/*container가 주체, item이 자식 역할*/
       height: 500px;
       border: 1px solid black;
+      display: flex;/*행 나열을 열 나열로 바꿈*/
+      /*flex-direction: column; 
+      flex-direction: row 기본값 왼쪽에서 오른쪾으로;
+      flex-direction: column-reverse; 시작점 반대
+      flex-direction: row-reverse;*/
+      /*flex-wrap: wrap; 콘테이너 행에 안 들어가면 자동으로 안에 잘 배치
+      align-content: flex-start; center, flex-end*/
     }
+    
+    /* flex container관련 속성
+    배치- flex-direction, flex-wrap
+    공간 분배- justify(주축)-content, align(교차축)-content
+    정렬 - align-items, align-self
+
+    flex item관련 속성
+    -align-self, flex-grow, flex-basis, order
+    */
 
     .post {
       background-color: grey;
@@ -19,9 +35,13 @@
       padding: 0.5rem;
     }
 
-    .item1 {}
+    .item1 {
+      align-self: center;
+    }
 
-    .item2 {}
+    .item2 {
+      align-self: flex-end;
+    }
   </style>
 </head>
 

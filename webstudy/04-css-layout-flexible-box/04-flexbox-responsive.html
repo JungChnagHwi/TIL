@@ -7,9 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    /*반응형 레이아웃 - 다양한 디바이스와 화면 크기에 자동으로 최적 적용*/
     .card {
       width: 80%;
       border: 1px solid black;
+      display: flex;
+      flex-wrap: wrap;
 
     }
 
@@ -17,9 +20,15 @@
       width: 100%;
     }
 
-    .thumbnail {}
+    .thumbnail {
+      flex-basis: 700px;
+      flex-grow: 1;
+    }
 
-    .content {}
+    .content {
+      flex-basis: 350px;
+      flex-grow: 1;
+    }
   </style>
 </head>
 
