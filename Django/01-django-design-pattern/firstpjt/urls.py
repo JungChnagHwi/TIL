@@ -21,5 +21,5 @@ from articles import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #articles 앱의 메인페이지에 대한 경로
-    path('articles/', views.index)
+    path('', views.index)
 ]
