@@ -52,3 +52,12 @@ def detail(request, num):
         'num': num
     }
     return render(request, 'articles/detail.html', context)
+
+def random_number(request, number):
+    next_number = number + 1
+    context = {
+        'number': number,
+        'next_number': next_number
+    }
+    return render(request, 'articles/random_number.html', context)
+    

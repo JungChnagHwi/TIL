@@ -1,6 +1,6 @@
 # Django
 
-1. 가상환경 생성
+1. 가상환경 생성(gitignore 생성 후)
 - $ python -m venv 이름
 2. 가상환경 활성화(on/off) 두 개의 가상환경 키고 싶으면 두 개의 gitbash에 따로 켜야 함
 - $ source venv/Scripts/activate /// deactivate 로 off
