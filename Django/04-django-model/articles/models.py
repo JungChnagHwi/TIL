@@ -25,6 +25,7 @@ class Article(models.Model): #models모듈에 Model 클래스를 상속 받고 �
     # -> 만약 게시물이 있었다가 추가되면 빈 값으로 추가될 수 없어 불가능
     # 01. default값을 장고가 알아서 넣거나 02. 직접 작성
     # 1번 선택 후 엔터 누르면 기본값 생성
+    # 2번 선택 시 문자열로 직접 작성 예를 들면 models.DateTimeField(//default = '2013-11-11'//,or //auto_now_add = True// 둘이 같이 쓸 수 없음 
     # 0002_~~ 파일이 생겼는데 0001번 설계도를 의존함, 0001에서 이어가는 개념
     # python manage.py migrate (반영)
     
@@ -43,6 +44,7 @@ admin.site.register(Article)
 # 데이터베이스 초기화 방법
 # migration 파일(0001,0002...), db.sqlite3(그냥 delete 하지 말고 휴지통 보내지 말고 shift+delete->완전히 삭제하자)
 # 파일 2개만 삭제(서버 끄고)
+# db 다시 만들고 계정부터 다시 생성해야 함 
 
 # 기타
 # python manage.py showmigrations (파일들이 migrate 됐는지 여부 확인, [x]가 완료)
