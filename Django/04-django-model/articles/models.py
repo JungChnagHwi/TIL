@@ -41,12 +41,14 @@ admin.site.register(Article)
 #admin.py에 작성한 모델 클래스를 등록해야만 admin site에서 확인 가능
 
 # 데이터베이스 초기화 방법
-# migration 파일(0001,0002...), db.sqlite3 파일 2개만 삭제
+# migration 파일(0001,0002...), db.sqlite3(그냥 delete 하지 말고 휴지통 보내지 말고 shift+delete->완전히 삭제하자)
+# 파일 2개만 삭제(서버 끄고)
 
 # 기타
-# python manage.py showmigrations (파일들이 migrate 됐는지 여부 확인)
+# python manage.py showmigrations (파일들이 migrate 됐는지 여부 확인, [x]가 완료)
 # python manage.py sqlmigrate articles 0001 (해당 파일이 어떻게 번역되어 db에 전달되는지 확인)
 
+#crud,, 장고는 지웠던 값을 재사용하지 않음, 삭제 후 생성 시 id는 2가 됨.
     
     
     

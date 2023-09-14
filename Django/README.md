@@ -108,3 +108,9 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 2. 특정 경로에 요청이 왔을 때, 그 요청에 적절한 처리하기 -> views.py
 3. 적절한 처리 과정에서 template(html) 이 필요하다면, 작성하기 -> templates/*.html
 4. 작성된 template을 사용자에게 반환하기 -> views에 정의한 함수의 return 값
+
+## Migrations
+-model클래스의 변경사항(생성,수정,삭제)등 을 DB에 최종 반영하는 방법
+-model class ->makemigrations->migration파일(0001_initial.py)->migrate-> dbsql
+-   python manage.py makemigrations(작성) ,
+-   python manage.py migrate(DB에 전달)
