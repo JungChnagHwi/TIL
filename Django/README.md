@@ -122,7 +122,8 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 - QuerySet API 실습 사전 준비
 - 장고가 QuerySet API 로 요청하면 ORM을 거쳐 sql에 보내고 QuerySet(다중) or instance(하나)를 받아옴
 - Article.objects.all() == Model class.Manager.Queryset API
-- pip install ipython,,, pip install django-extensions(확장 프로그램),, 
+- pip install ipython(터미널에서 색깔 입히는 기능),,, 
+- pip install django-extensions(확장 프로그램 기능),, 
 - 설치하고 'django_extensions' app목록에 추가, requirements에도 추가
 - Django shell 실행 -> 'pyhton manage.py shell_plus'(확장 프로그램),,, QuerySet API가 django 프로젝트에 영향을 끼치기 때문에,, 근데 shell이 뭐냐?,,, 나가는 법->exit()
 - shell_plus 환경에서 데이터 crud,,, (tip, ctrl + l 터미널 창 정리????)
@@ -149,6 +150,7 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 ### 3번
 - Article.objects.create(title='third', content='django!')
 - 1번 반복(저장 - 확인)
+- 유효성 검사를 하기 힘들어 잘 안씀?
 
 ### CRUD
 - Article.objects.get(pk=1),, 단일 데이터 조회(둘 이상은 오류)
@@ -160,6 +162,7 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 - article = Article.objects.get(pk=1) 수정할 인스턴스 조회
 - article.title = 'byebye' 변경
 - article.save() 저장 및 article.title 확인
+- 만약 데이터 수정 시 제약조건을 벗어났다면 기입은 되는데 나중에 유효성 검사 해야 함?? 담 시간에.
 - 
 - 데이터 삭제,,
 - article = Article.objects.get(pk=1) 삭제할 인스턴스 조회
