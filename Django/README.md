@@ -137,7 +137,7 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 - article.title = 'first',, 인스턴스 변수(title)에 할당
 - article.content = 'first',, 인스턴스 변수(content)에 할당
 - Article.objects.all()(all은 전체 조회),, QuerySet [] 확인
-- article.save,, 저장해야 함
+- article.save(),, 저장해야 함
 - article.id,, aricle.pk(장고는 pk 지원, pk=id),, article.title, article.content... 확인
 - Query Set도 index 존재,, Article.objects.all()[0] 이렇게 조회 가능
 - Article.objects.filter(content__contains='dja'),,,특정 레코드에 대한 조건 조회
