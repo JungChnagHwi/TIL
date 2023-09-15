@@ -150,7 +150,7 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 - Article.objects.create(title='third', content='django!')
 - 1번 반복(저장 - 확인)
 
-### 응용
+### CRUD
 - Article.objects.get(pk=1),, 단일 데이터 조회(둘 이상은 오류)
 - Article.objects.filter(content='django!'),, 특정 조건 데이터 조회
 - articles = Article.objects.all()
