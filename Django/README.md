@@ -114,3 +114,54 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 -model class ->makemigrations->migration파일(0001_initial.py)->migrate-> dbsql
 -   python manage.py makemigrations(작성) ,
 -   python manage.py migrate(DB에 전달)
+
+## ORM
+- Object Relational Mapping
+- 객체 지향 프로그래밍 언어를 사용하여 호환되지 않는 유형의 시스템 간에 데이터를 변환하는 기술
+-
+- QuerySet API 실습 사전 준비
+- 장고가 QuerySet API 로 요청하면 ORM을 거쳐 sql에 보내고 QuerySet(다중) or instance(하나)를 받아옴
+- Article.objects.all() == Model class.Manager.Queryset API
+- pip install ipython,,, pip install django-extensions(확장 프로그램),, 
+- 설치하고 'django_extensions' app목록에 추가, requirements에도 추가
+- Django shell 실행 -> 'pyhton manage.py shell_plus'(확장 프로그램),,, QuerySet API가 django 프로젝트에 영향을 끼치기 때문에,, 근데 shell이 뭐냐?,,, 나가는 법->exit()
+- shell_plus 환경에서 데이터 crud,,, (tip, ctrl + l 터미널 창 정리????)
+
+
+
+## 데이터 객체를 만드는 3가지 방법
+- shell_plus 환경
+### 1번
+- article = Article(),, Article(class) 로부터 article(instance) 생성
+- article.title = 'first',, 인스턴스 변수(title)에 할당
+- article.content = 'first',, 인스턴스 변수(content)에 할당
+- Article.objects.all()(all은 전체 조회),, QuerySet [] 확인
+- article.save,, 저장해야 함
+- article.id,, aricle.pk(장고는 pk 지원, pk=id),, article.title, article.content... 확인
+- Query Set도 index 존재,, Article.objects.all()[0] 이렇게 조회 가능
+- Article.objects.filter(content__contains='dja'),,,특정 레코드에 대한 조건 조회
+- 기타 등등 기능 장고 공식 문서 참고
+
+### 2번
+- article = Article(title = 'second', content='django!')
+- 1번 반복(저장 - 확인)
+
+### 3번
+- Article.objects.create(title='third', content='django!')
+- 1번 반복(저장 - 확인)
+
+### 응용
+- Article.objects.get(pk=1),, 단일 데이터 조회(둘 이상은 오류)
+- Article.objects.filter(content='django!'),, 특정 조건 데이터 조회
+- articles = Article.objects.all()
+- for article in articles: print(article.title) 이런식으로 사용 가능
+- 
+- 데이터 수정,,
+- article = Article.objects.get(pk=1) 수정할 인스턴스 조회
+- article.title = 'byebye' 변경
+- article.save() 저장 및 article.title 확인
+- 
+- 데이터 삭제,,
+- article = Article.objects.get(pk=1) 삭제할 인스턴스 조회
+- article.delete() 삭제,, 더 이상 조회 안됨
+
