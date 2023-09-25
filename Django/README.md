@@ -168,3 +168,4 @@ $ python manage.py startapp 이름(articles) (복수형 권장)
 - article = Article.objects.get(pk=1) 삭제할 인스턴스 조회
 - article.delete() 삭제,, 더 이상 조회 안됨
 
+sou
