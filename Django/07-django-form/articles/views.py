@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Article
-
+from .forms import ArticleForm
 
 # Create your views here.
 def index(request):
@@ -24,11 +24,21 @@ def new(request):
 
 
 def create(request):
-    title = request.POST.get('title')
-    content = request.POST.get('content')
-    article = Article(title=title, content=content)
-    article.save()
-    return redirect('articles:index')
+    form = ArticleForm(request.POST)
+    if form.is_valid():
+        article = form.save()
+        return redirect('articles:detail', article.pk)
+    context = {
+        'form': form,
+    }
+    return render(request, 'articles/new.html', context)
+    
+
+    # title = request.POST.get('title')
+    # content = request.POST.get('content')
+    # article = Article(title=title, content=content)
+    # article.save()
+    # return redirect('articles:index')
 
 
 def delete(request, pk):
@@ -39,8 +49,10 @@ def delete(request, pk):
 
 def edit(request, pk):
     article = Article.objects.get(pk=pk)
+    form = ArticleForm(isinstance = article)
     context = {
         'article': article,
+        'form': form,
     }
     return render(request, 'articles/edit.html', context)
 
@@ -51,3 +63,11 @@ def update(request, pk):
     article.content = request.POST.get('content')
     article.save()
     return redirect('articles:detail', article.pk)
+
+
+def new(request):
+    form = ArticleForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'articles/new.html', context)
