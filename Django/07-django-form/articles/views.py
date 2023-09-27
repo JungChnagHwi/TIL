@@ -58,11 +58,11 @@ def edit(request, pk):
 
 
 def update(request, pk):
-    article = Article.objects.get(pk=pk)
-    article.title = request.POST.get('title')
-    article.content = request.POST.get('content')
-    article.save()
-    return redirect('articles:detail', article.pk)
+    # article = Article.objects.get(pk=pk)
+    # article.title = request.POST.get('title')
+    # article.content = request.POST.get('content')
+    # article.save()
+    # return redirect('articles:detail', article.pk)
 
 
 def new(request):
