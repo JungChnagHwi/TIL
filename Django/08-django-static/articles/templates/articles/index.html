@@ -4,8 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  {% comment %} <link rel='stylesheet' href="{% static "articles/style.css" %}">  {% endcomment %}
 </head>
 <body>
+  
+  {% load static %}
+  
+  <img src="{% static 'articles/sample-1.png' %}" alt='img'>
+  <img src = "{% static 'sample-2.png' %}" alt = 'img'>
   <h1>INDEX</h1>
   <a href="{% url 'articles:create' %}">CREATE</a>
   <hr>
