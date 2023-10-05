@@ -3,111 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>나의 웹 사이트</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <style>
-    .box {
-      text-align: center;
-      padding: 20px;
-    }
-    
-    .smallbox {
-      width: 200px;
-      height: 200px;
-      text-align: center;
-      border: 2px solid black;
-      margin: 20px;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: black;
-      height: 50px;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
+  <title>Document</title>
 </head>
 <body>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">포트폴리오</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skill">Skill</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#project">Project</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <h1>INDEX</h1>
+  <h3>{{ user.username }}님 안녕하세요!</h3>
+  <a href="{% url "accounts:login" %}">LOGIN</a>
+  <form action="{% url "accounts:logout" %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="LOGOUT">
+  </form>
 
-    <section id="home" class="box bg-white">
-      <div class="bg-white m-5 p-5 text-black">
-        <h1 class="typer-text">안녕하세요. 정창휘의 포트폴리오입니다.<br>뽑아주시면 감사하겠습니다.</h1>
-      </div>
-    </section>
-
-    <section id="skill" class="box" style="background-color: lightgray;">
-      <div class="m-5 p-5 text-black">
-        <h1>Skill</h1>
-        <div class="d-flex justify-content-center flex-wrap">
-          <div class="p-3"><img src="image/icons8-css3-240.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/icons8-html-240.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/icons8-자바-스크립트-240.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/icons8-자바-커피-컵-로고-240.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/icons8-파이썬-48.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/img.webp" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/free-icon-nodejs-919825.png" alt="" width="100px" height="100px"></div>
-          <div class="p-3"><img src="image/icons8-docker-a-set-of-coupled-software-as-a-service-96.png" alt="" width="100px" height="100px"></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="project" class="box bg-white">
-      <div class="bg-white m-5 p-5 text-black">
-        <h1>Project</h1>
-        <div class="text-center d-flex justify-content-center flex-wrap">
-          <div class="col-12 col-sm-4 smallbox">Project 1</div>
-          <div class="col-12 col-sm-4 smallbox">Project 2</div>
-          <div class="col-12 col-sm-4 smallbox">Project 3</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="box" style="background-color: lightgray;">
-      <div class="m-5 p-5 text-black">
-        <h1>Contact</h1>
-        <ul style="list-style-type: none; padding: 0; text-align: left;">
-          <li><strong>이름:</strong> 정창휘</li>
-          <li><strong>생년월일:</strong> 1998.01.22</li>
-          <li><strong>위치:</strong> 부산</li>
-          <li><strong>Email:</strong> jch9937@gmail.com</li>
-          <li><strong>GitHub:</strong> GitHub 주소</li>
-        </ul>
-      </div>
-    </section>
-  </div>
-
-  <footer class="footer">내용</footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <a href="{% url 'articles:create' %}">CREATE</a>
+  <hr>
+  {% for article in articles %}
+    <p>글 번호 : {{ article.pk }}</p>
+    <a href="{% url "articles:detail" article.pk %}">
+      <p>글 제목 : {{ article.title }}</p>
+    </a>
+    <p>글 내용 : {{ article.content }}</p>
+    <hr>
+  {% endfor %}
 </body>
 </html>

@@ -39,7 +39,7 @@ def signup(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('accounts:login')
+            return redirect('articles:index')
     else:
         form = CustomUserCreationForm()
     context = {
