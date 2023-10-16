@@ -1,4 +1,4 @@
--- 공통
+-- 공통,,, 나중에 해야 해 꼭!!!
 SELECT * FROM articles;
 SELECT * FROM users;
 DROP TABLE articles;

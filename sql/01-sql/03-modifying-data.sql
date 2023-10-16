@@ -34,9 +34,9 @@ VALUES
 UPDATE 
   articles
 SET
-  title = 'update Title'
+  title = 'update Title' -- SET절 다음에 수정할 필드와 새 값 지정
 WHERE
-  id = 1;
+  id = 1; -- where 절에서 수정할 레코드를 지정하는 조건 작성
 
 UPDATE 
   articles
@@ -57,6 +57,6 @@ DELETE FROM
   articles
 WHERE id IN (
   SELECT id FROM articles
-  ORDER BY createdAt
+  ORDER BY createdAt -- 작성일이 오래된 순으로 레코드 2개 삭제
   LIMIT 2
 );
