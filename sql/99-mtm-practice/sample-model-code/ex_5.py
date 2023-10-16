@@ -34,7 +34,7 @@ patient2 = Patient.objects.create(name='duke')
 # 1. Reservation class를 통한 예약 생성
 reservation1 = Reservation(doctor=doctor1, patient=patient1, symptom='headache')
 reservation1.save()
-doctor1.patient_set.all()
+doctor1.patient_set.all()  #역참조???
 patient1.doctors.all()
 
 # 2. Patient 객체를 통한 예약 생성

@@ -16,10 +16,10 @@ class Patient(models.Model):
         return f'{self.pk}번 환자 {self.name}'
 
 
-# 코드 예시
+# 코드 예시 - shell에 구현
 doctor1 = Doctor.objects.create(name='allie')
 doctor2 = Doctor.objects.create(name='barbie')
 patient1 = Patient.objects.create(name='carol', doctor=doctor1)
 patient2 = Patient.objects.create(name='duke', doctor=doctor2)
 patient3 = Patient.objects.create(name='carol', doctor=doctor2)
-patient4 = Patient.objects.create(name='duke', doctor=doctor1, doctor2)
+patient4 = Patient.objects.create(name='duke', doctor=doctor1, doctor2) # 에러

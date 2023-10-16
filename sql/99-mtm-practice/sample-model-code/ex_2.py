@@ -16,7 +16,7 @@ class Patient(models.Model):
         return f'{self.pk}번 환자 {self.name}'
 
 
-# 중개모델 작성
+# 중개모델 작성-예약 테이블 추가
 class Reservation(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
