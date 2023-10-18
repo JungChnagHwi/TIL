@@ -181,3 +181,25 @@ sou
 - 쿠키 키벨류 형태로 저장, 이렇게 쿠키를 저장해놨다가 동일한 서버에 재요청시 쿠키를 함께 전송, 
 - 사용 목적, 세션관리(로그인, 아이디 자동완성, 공지 하루 안보기, 팝업 체크, 장바구니), 개인화(사용자 선호, 테마 등의 설정), 트래킹(사용자 행동 기록 및 분석)
 -세션이란? 서버 측에서 생성되어 클라이언트와 서버 간의 상태를 유지, 상태 정보를 저장하는 데이터 저장방식,, 쿠키에 세션 데이터를 저장하여 매 요청 시마다 세션 데이터를 함께 보냄
+
+
+## 10. REST framework
+- API , 애플리케이션과 프로그래밍으로 소통하는 방법, 클라이언트-서버처럼 서로 다른 프로그램에서 요청과 응답을 받을 수 있도록 만든 체계
+- REST(Representationnal State Transfer) : API 서버를 개발하기 위한 일종의 소프트웨어 설계 방식 , 약속(규칙X)
+- RESTful API: '자원을 정의' 하고 '자원에 대한 주소를 지정' 하는 전반적인 방법을 서술
+- 자원을 정의하고 주소를 지정하는 방법 : 
+1. 자원의 식별
+-URI(Uniform Resource Identifier) 통합 자원 식별자 : 인터넷에서 리소스(자원)를 식별하는 문자열 ex)URL(Uniform Resource Locater) 통합 자원 위치 : 네트워크 상에 리소스가 어디 있는지를 알려주기 위한 약속
+-> http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereinTheDocument
+(Schema)://,,Domain Name,, 80port,, path to the file,, ?parameters,, #Anchor
+2. 자원의 행위
+-HTTP Methods - GET, POST, PUT, DELETE
+-
+3. 자원의 표현
+-JSON
+-궁극적으로 표현되는 데이터 결과물
+- 장고에서 템플릿 역할을 프론트엔드 프레임워크가 대체하여 JSON 파일을 넘겨줌
+
+- DRF
+- Serialization 직렬화
+- 여러 시스템에서 활용하기 위해 데이터 구조나 객체 상태를 나중에 재구성할 수 있는 포맷으로 변환하는 과정
