@@ -68,6 +68,6 @@ def comment_detail(request, comment_pk):
 def comment_create(request, article_pk):
     article = get_object_or_404(Article, pk=article_pk)
     serializer = CommentSerializer(data = request.data)
-    if serializer.is_valid(raise_exception=True):
-        serializer.save(article = article)
+    if serializer.is_valid(raise_exception=True): # raise_exception=True 유효성 검사나면 에러 페이지 안뜨게 함.
+        serializer.save(article = article)        # 예외 상황 발생시 오류 찾아서 알려줌!
         return Response(serializer.data, status = status.HTTP_201_CREATED)

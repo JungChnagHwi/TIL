@@ -7,16 +7,14 @@ class ArticleListSerializer(serializers.ModelSerializer):
         model = Article
         fields = ('id', 'title', 'content',)
 
-
-
-
 class CommentSerializer(serializers.ModelSerializer):
     class ArticleTitleSerializer(serializers.ModelSerializer):
         class Meta:
             model = Article
             fields = ('title',)
+    #override???
     article = ArticleTitleSerializer(read_only=True)
-
+    # 새로운 id 만들 떄 article까지 작성할 필요 없어! read_only니까?????
     class Meta:
         model = Comment
         fields = '__all__'
@@ -29,3 +27,5 @@ class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
         fields = '__all__'
+
+
