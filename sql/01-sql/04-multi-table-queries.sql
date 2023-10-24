@@ -1,9 +1,9 @@
 -- 공통,,, 나중에 해야 해 꼭!!!
-SELECT * FROM articles;
-SELECT * FROM users;
-DROP TABLE articles;
-DROP TABLE users;
-PRAGMA table_info('articles');
+-- SELECT * FROM articles;
+-- SELECT * FROM users;
+-- DROP TABLE articles;
+-- DROP TABLE users;
+-- PRAGMA table_info('articles');
 
 
 -- 실습용 데이터
