@@ -21,6 +21,7 @@
 
     // console.log(user.nonMethod()) // Uncaught TypeError: user.nonMethod is not a function
     console.log(user.nonMethod?.()) // undefined
+    // 속성이 없는 객체를 에러없이 접근가능
 
     console.log(user.address && user.address.street) // undefined
 
