@@ -45,13 +45,14 @@ const router = createRouter({
   ]
 })
 
+
+// router.beforeEach((to, from) => {
+//   const isAuthenticated = false
+  
+//   if (!isAuthenticated && to.name !== 'login') {
+//     console.log('로그인이 필요합니다.')
+//     return { name: 'login'}
+//   }
+// })
+
 export default router
-
-router.beforeEach((to, from) => {
-  const isAuthenticated = false
-
-  if (!isAuthenticated && to.name !== 'login') {
-    console.log('로그인이 필요합니다.')
-    return { name: 'login'}
-  }
-})

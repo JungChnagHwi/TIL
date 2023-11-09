@@ -9,7 +9,7 @@
 
 <script setup>
     import { ref } from 'vue'
-    import { useRoute, useRouter, onBeforeRouteLeave, onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
+    import { useRoute, useRouter, onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
 
     const route = useRoute()
     const userId = ref(route.params.id)
@@ -17,6 +17,7 @@
     const router = useRouter()
     const goHome = function() {
         router.push({ name: 'home'})
+    }
 
     onBeforeRouteLeave((to, from) => {
         const answer = window.confirm('정말 떠날거야?')
@@ -25,7 +26,7 @@
         }
     })
 
-    }
+    
     const routeUpdate =function(){
         router.push({name:'user', params: { id:100 }})
     }
